@@ -13,7 +13,7 @@ import torch
 
 import sys
 
-inputt=sys.argv[1]
+inputt=sys.argv[2]
 data=pd.read_csv(inputt, sep="\n", header=None)
 #print(len(data))
 #print(data[0])
