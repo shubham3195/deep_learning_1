@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -9,15 +10,20 @@
 import pandas as pd
 import numpy as np
 import torch
-data=pd.read_csv("test_input.txt", sep="\n", header=None)
-#print(len(data))
 
+import sys
+
+inputt=sys.argv[1]
+data=pd.read_csv(inputt, sep="\n", header=None)
+#print(len(data))
+#print(data[0])
 ind=[]
 l=[]
-for i in range(1,len(data)+1):
-    ind.append(int(i))
-    i=int(i)
+i=0
+for j in range(0,len(data)):
     
+    i=int(data[0][j])
+    ind.append(i)
     if(i%3==0 and i%5==0):
         l.append("fizzbuzz")
         continue
@@ -61,7 +67,7 @@ def perform(l):
 trx=np.array(ind)
 tx=torch.FloatTensor(perform(trx)).unsqueeze(dim=1)
 
-
+#print(trx)
 # In[285]:
 
 
@@ -108,8 +114,8 @@ for i in range(len(tx)):
         f1.write("fizzbuzz\n")
         infer.append("fizzbuzz")
     else:
-        f1.write(str(i+1)+"\n")
-        infer.append(str(i+1))
+        f1.write(str(trx[i])+"\n")
+        infer.append(trx(i))
         
     #f.write(str(i)+"\n")
 
@@ -168,6 +174,8 @@ for i in range(len(l)):
 
 
 # In[ ]:
+
+
 
 
 
