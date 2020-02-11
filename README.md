@@ -2,4 +2,4 @@
 Contains neural network implementation of FizzBuzz problem
 
 
-To Run: python3 main.py <input_file_path>
+To Run: python3 main.py --test-data <input_file_path>
