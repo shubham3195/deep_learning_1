@@ -115,7 +115,7 @@ for i in range(len(tx)):
         infer.append("fizzbuzz")
     else:
         f1.write(str(trx[i])+"\n")
-        infer.append(trx(i))
+        infer.append(str(i+1))
         
     #f.write(str(i)+"\n")
 
